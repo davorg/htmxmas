@@ -1,0 +1,6 @@
+<% IF row.id -%>
+  <button hx-post="/update" hx-ext='json-enc' hx-target="#list-body" class="btn btn-primary">Save</button>
+<% ELSE -%>
+  <button hx-post="/add" hx-ext='json-enc' hx-target="#list-body" class="btn btn-primary">Insert</button>
+<% END -%>
+  <button hx-get="/cancel" hx-target="#form" class="btn btn-secondary">Cancel</button>

@@ -1,0 +1,12 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use HTMXmas::Schema;
+
+my $sch = HTMXmas::Schema->get_schema;
+my $rs  = $sch->resultset('Child');
+
+for (@ARGV) {
+  $rs->create({ name => $_ });
+}

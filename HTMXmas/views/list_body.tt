@@ -1,0 +1,11 @@
+<% FOREACH row IN rows -%>
+              <tr>
+                <td><% row.id %></td>
+                <td id="edit-<% row.id %>"><% row.name %></td>
+                <td>
+                  <i hx-get="/edit/<% row.id %>" hx-target="#edit-<% row.id %>" title="edit" class="bi-pencil-square text-primary" style="font-size: 1.25rem"></i>
+                  <i hx-get="/view/<% row.id %>" hx-target="#view" title="view" class="bi-gift-fill text-primary" style="font-size: 1.25rem"></i>
+                  <i hx-delete="/delete/<% row.id %>" hx-confirm="Are you sure you want to delete this record?" hx-target="#list-body" title="delete" class="bi-trash-fill text-danger" style="font-size: 1.25rem"></i>
+                </td>
+              </tr>
+<% END -%>

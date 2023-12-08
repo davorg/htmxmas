@@ -1,0 +1,5 @@
+<form hx-post="/update/<% row.id %>" hx-target="#edit-<% row.id %>" hx-swap="outerHTML" hx-ext="json-enc">
+  <input class="form-control" id="name" name="name" value="<% row.name %>">
+  <i hx-post="/update/<% row.id %>" hx-params="<% col %>" hx-ext="json-enc" hx-target="#edit-<% row.id %>" title="save" class="bi bi-check-square text-success" style="font-size: 1.25rem"></i>
+  <i hx-get="/reset/<% row.id %>" hx-target="#edit-<% row.id %>" title="cancel" class="bi bi-x-square text-danger" style="font-size: 1.25rem"></i>
+</form>

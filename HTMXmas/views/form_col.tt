@@ -1,0 +1,12 @@
+  <div class="row mb-3" id="form-<% col.name %>">
+    <label for="<% col %>" class="col-sm-2 col-form-label"><% col.ucfirst %></label>
+    <div class="col-sm-8">
+      <input class="form-control" id="<% col %>" name="<% col %>" value="<% row.${col} %>">
+    </div>
+<% IF row.id -%>
+    <div class="col-sm-1">
+      <i hx-post="/update/<% row.id %>" hx-params="<% col %>" hx-ext="json-enc" hx-target="#list-body" title="save" class="bi bi-check-square text-success" style="font-size: 1.25rem"></i>
+      <i hx-get="/reset/<% col %>/<% row.id %>" hx-target="#form-<% col %>" hx-swap="outerHTML" title="cancel" class="bi bi-x-square text-danger" style="font-size: 1.25rem"></i>
+    </div>
+<% END -%>
+  </div>

@@ -1,0 +1,12 @@
+<form>
+
+<% INCLUDE form_buttons.tt %>
+
+<% FOR col IN cols;
+     NEXT UNLESS col == 'name';
+     INCLUDE form_col.tt;
+   END -%>
+
+<% INCLUDE form_buttons.tt %>
+
+</form>
